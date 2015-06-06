@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+@Html.Partial("_BreadcrumbsPartial")
+
+<div class="wrapper wrapper-content border-bottom animated fadeInRight">
+    @*<div class="row wrapper border-bottom white-bg page-heading">*@
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Search Criteria</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="form-horizontal">
+                        <h2>What are you looking for?</h2>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Type the name of the business or service you're looking for</label>
+                            <div class="col-sm-6">
+                                <div class="input-group m-b">
+                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                    <div class="typeahead-container">
+                                        <div class="typeahead-field">
+                                            <span class="typeahead-query">
+                                                <input id="search-query-box" name="search-query[query]" type="search" placeholder="e.g. Plumber..." autocomplete="off">
+                                            </span>
+                                            <span class="typeahead-button">
+                                                <button type="submit">
+                                                    <i class="typeahead-search-icon"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span class="input-group-btn"><button type="button" class="btn btn-info">Browse...</button></span>
+                                </div>
+
+                                <div class="table-responsive table-condensed">
+                                    <table class="table">
+                                        <tr>
+                                            <td><a href="#">Plumbers</a></td>
+                                            <td><a href="#">Builders</a></td>
+                                            <td><a href="#">Electricians</a></td>
+                                            <td><a href="#">Carpenters & Joiners</a></td>
+                                            <td><a href="#">Gas Engineers</a></td>
+                                            <td><a href="#">Architects</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">Hairdressers</a></td>
+                                            <td><a href="#">Nail Care</a></td>
+                                            <td><a href="#">Garage Services</a></td>
+                                            <td><a href="#">Accountant</a></td>
+                                            <td><a href="#">Financial Advisors</a></td>
+                                            <td><a href="#">Mortgage Advisors</a></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>When do you want it?</h2>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Tell us approximately when you want the service</label>
+                            <div class="col-sm-6">
+                                <!-- ionRange Range Slider -->
+                                <div id="dateRangeSlider"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">or...</label>
+                            <div class="col-sm-6">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <button class="btn btn-info" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fa fa-exclamation-circle"></i>   As soon as possible</button>
+                                    <button class="btn btn-info" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fa fa-calendar"></i>   I have specific dates</button>
+                                    <button class="btn btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fa fa-phone"></i>   Contact Me</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Where do you want it?</h2>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Where do you want this service?</label>
+
+                            <div class="col-sm-6">
+                                <div class="input-group m-b">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </span>
+                                    <input type="text" placeholder="Enter town or postcode" class="form-control">
+                                    <span class="input-group-btn"><button type="button" class="btn btn-info">Use my location</button></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <a class="btn btn-lg btn-primary" href="@Url.Action("SearchResults", "Search", new { area = "Client" })">Search</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/Content/plugins/ionRangeSlider/ionRangeStyles")
+    @Styles.Render("~/Content/plugins/jquery-typeahead")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/ionRange")
+    @Scripts.Render("~/plugins/jquery-typeahead")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#search-query-box').typeahead({
+                minLength: 1,
+                order: "asc",
+                template: "{{display}} <small style='color:#999;'>{{group}}</small>",
+                debug: true,
+                source: {
+                    category: {
+                        url: {
+                            type: "GET",
+                            url: "@Url.Action("GetServiceCategories", "ServiceCategories", new {area = "Provider"})",
+                            data: {
+                                myKey: "myValue"
+                            }
+                        }
+                    },
+                    "service provider": {
+                        url: {
+                            type: "GET",
+                            url: "@Url.Action("GetServiceProviders", "ServiceProviders", new {area = "Provider"})",
+                            data: {
+                                myKey: "myValue"
+                            }
+                        }
+                    }
+                }
+            });
+
+
+            // Range Slider
+            $("#dateRangeSlider").ionRangeSlider({
+                values: [
+                    "Today", "Tomorrow", "This week",
+                    "Next two weeks", "This month", "This year"
+                ],
+                type: 'single',
+                from: 1,
+                grid: true,
+                grid_num: 6
+            });
+
+        });
+    </script>
+}
