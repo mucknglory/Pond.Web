@@ -199,7 +199,7 @@
     <Compile Include="Areas\Client\Controllers\CalendarController.cs" />
     <Compile Include="Areas\Client\Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Areas\Client\Controllers\MailboxController.cs" />
+    <Compile Include="Areas\Client\Controllers\MessagesController.cs" />
     <Compile Include="Areas\Client\Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -249,6 +249,7 @@
     <Content Include="Content\plugins\blueimp\img\video-play.svg" />
     <Content Include="Content\plugins\bootstrap-rtl\bootstrap-rtl.css" />
     <Content Include="Content\plugins\bootstrap-rtl\bootstrap-rtl.min.css" />
+    <Content Include="Content\plugins\cal-heatmap\cal-heatmap.css" />
     <Content Include="Content\plugins\chosen\chosen-sprite%402x.png" />
     <Content Include="Content\plugins\chosen\chosen-sprite.png" />
     <Content Include="Content\plugins\chosen\chosen.css" />
@@ -416,6 +417,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Navigation.cshtml" />
     <Content Include="Areas\Client\Views\Search\ProviderAvailability.cshtml" />
     <Content Include="Areas\Client\Views\Search\Search - Copy.cshtml" />
+    <Content Include="Content\data\availability-dates.json" />
     <None Include="Properties\PublishProfiles\pond-web.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -434,6 +436,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\plugins\blueimp\jquery.blueimp-gallery.min.js" />
+    <Content Include="Scripts\plugins\cal-heatmap\cal-heatmap.min.js" />
     <Content Include="Scripts\plugins\chartJs\Chart.min.js" />
     <Content Include="Scripts\plugins\chosen\chosen.jquery.js" />
     <Content Include="Scripts\plugins\codemirror\codemirror.js" />
@@ -874,6 +877,7 @@
     <Content Include="Scripts\plugins\justified-gallery\README.md" />
     <Content Include="Areas\Client\Views\Contacts\Contacts.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_AnonLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

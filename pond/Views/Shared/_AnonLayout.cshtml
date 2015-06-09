@@ -24,16 +24,10 @@
 <body>
 
     <!-- Wrapper-->
-    <div id="wrapper">
-
-        <!-- Navigation -->
-        @Html.Partial("_Navigation")
+    <div id="wrapper" class="white-bg">
 
         <!-- Page wrapper -->
-        <div id="page-wrapper" class="white-bg">
-
-            <!-- Top Navbar -->
-            @Html.Partial("_TopNavbar")
+        <div class="container">
 
             <!-- Main view  -->
             <div id="content">
@@ -48,14 +42,10 @@
 
     </div>
     <!-- End wrapper-->
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/plugins/metsiMenu")
     @Scripts.Render("~/plugins/pace")
-    @Scripts.Render("~/plugins/slimScroll")
     @Scripts.Render("~/bundles/inspinia")
-    @Scripts.Render("~/bundles/rateit")
     @RenderSection("scripts", required: false)
 </body>
 </html>

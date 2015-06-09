@@ -18,22 +18,22 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Type the name of the business or service you're looking for</label>
                             <div class="col-sm-6">
-                                <div class="input-group m-b">
-                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                                    <div class="typeahead-container">
-                                        <div class="typeahead-field">
-                                            <span class="typeahead-query">
-                                                <input id="search-query-box" name="search-query[query]" type="search" placeholder="e.g. Plumber..." autocomplete="off">
-                                            </span>
-                                            <span class="typeahead-button">
-                                                <button type="submit">
-                                                    <i class="typeahead-search-icon"></i>
-                                                </button>
-                                            </span>
+                                    <div class="input-group m-b">
+                                        <div class="typeahead-container">
+                                            <div class="typeahead-field">
+                                                <span class="typeahead-query">
+                                                    <input id="search-query-box" name="search-query[query]" type="search" placeholder="e.g. Plumber..." autocomplete="off">
+                                                </span>
+                                                <span class="typeahead-button">
+                                                    <button type="submit">
+                                                        <i class="typeahead-search-icon"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
                                         </div>
+                                        <span class="input-group-btn"><button type="button" class="btn btn-info">Browse...</button></span>
                                     </div>
-                                    <span class="input-group-btn"><button type="button" class="btn btn-info">Browse...</button></span>
-                                </div>
+
 
                                 <div class="table-responsive table-condensed">
                                     <table class="table">
@@ -71,9 +71,11 @@
                             <label class="col-sm-4 control-label">or...</label>
                             <div class="col-sm-6">
                                 <div class="btn-group" data-toggle="buttons">
-                                    <button class="btn btn-info" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fa fa-exclamation-circle"></i>   As soon as possible</button>
-                                    <button class="btn btn-info" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fa fa-calendar"></i>   I have specific dates</button>
-                                    <button class="btn btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fa fa-phone"></i>   Contact Me</button>
+                                    <p>
+                                    <button class="btn btn-white" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fa fa-exclamation-circle"></i>   As soon as possible</button>
+                                    <button class="btn btn-white" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fa fa-calendar"></i>   I have specific dates</button>
+                                    <button class="btn btn-warning " data-toggle="button" aria-pressed="false" autocomplete="off"><i class="fa fa-phone"></i>   Contact Me</button>
+                                        </p>
                                 </div>
                             </div>
                         </div>
@@ -109,12 +111,14 @@
     @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
     @Styles.Render("~/Content/plugins/ionRangeSlider/ionRangeStyles")
     @Styles.Render("~/Content/plugins/jquery-typeahead")
+    @Styles.Render("~/Content/plugins/cal-heatmap")
 }
 
 @section Scripts {
     @Scripts.Render("~/plugins/iCheck")
     @Scripts.Render("~/plugins/ionRange")
     @Scripts.Render("~/plugins/jquery-typeahead")
+    @Styles.Render("~/plugins/cal-heatmap")
 
     <script type="text/javascript">
         $(document).ready(function () {

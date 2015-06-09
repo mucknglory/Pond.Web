@@ -102,6 +102,14 @@ namespace Pond.Web
                       "~/Scripts/plugins/rickshaw/vendor/d3.v3.js",
                       "~/Scripts/plugins/rickshaw/rickshaw.min.js"));
 
+            // cal-heatmap styles
+            bundles.Add(new StyleBundle("~/Content/plugins/cal-heatmap").Include(
+                      "~/Content/plugins/cal-heatmap/cal-heatmap.css"));
+
+            // cal-heatmap
+            bundles.Add(new ScriptBundle("~/plugins/cal-heatmap").Include(
+                      "~/Scripts/plugins/cal-heatmap/cal-heatmap.min.js"));
+
             // ChartJS chart
             bundles.Add(new ScriptBundle("~/plugins/chartJs").Include(
                       "~/Scripts/plugins/chartjs/Chart.min.js"));

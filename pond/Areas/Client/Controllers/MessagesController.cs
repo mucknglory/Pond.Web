@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Pond.Web.Areas.Client.Controllers
 {
-    public class MailboxController : Controller
+    public class MessagesController : Controller
     {
 
         public ActionResult Inbox()
@@ -14,32 +14,32 @@ namespace Pond.Web.Areas.Client.Controllers
             return View();
         }
 
-        public ActionResult EmailView()
+        public ActionResult MessageView()
         {
             return View();
         }
     
-        public ActionResult ComposeEmail()
+        public ActionResult ComposeMessage()
         {
             return View();
         }
     
-        public ActionResult EmailTemplates()
+        public ActionResult MessageTemplates()
         {
             return View();
         }
 
-        public ActionResult BasicActionEmail()
+        public ActionResult BasicActionMessage()
         {
             return View();
         }
 
-        public ActionResult AlertEmail()
+        public ActionResult AlertMessage()
         {
             return View();
         }
 
-        public ActionResult BillingEmail()
+        public ActionResult BillingMessage()
         {
             return View();
         }
