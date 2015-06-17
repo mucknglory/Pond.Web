@@ -40,7 +40,7 @@ namespace Pond.Web.Areas.Client.Controllers
         /// <param name="SupplierID">If no SupplierId is passed it will search across all suppliers</param>
         /// <returns></returns>
         [AcceptVerbs(HttpVerbs.Get)]
-        public JsonResult GetSupplierAvailability(DateTime start, DateTime end, int SupplierID)
+        public JsonResult GetProviderAvailability(DateTime start, DateTime end, int SupplierID)
         {
             var result = new List<string>();
 

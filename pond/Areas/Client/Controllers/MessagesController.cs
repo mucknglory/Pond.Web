@@ -14,7 +14,7 @@ namespace Pond.Web.Areas.Client.Controllers
             return View();
         }
 
-        public ActionResult MessageView()
+        public ActionResult ViewMessage()
         {
             return View();
         }

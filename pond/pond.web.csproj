@@ -193,7 +193,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ServiceProvidersController.cs" />
     <Compile Include="Areas\Client\ClientAreaRegistration.cs" />
-    <Compile Include="Areas\Provider\Models\ServiceProvidersController.cs" />
+    <Compile Include="Areas\Provider\Controllers\ServiceProvidersController.cs" />
     <Compile Include="Areas\Provider\ProviderAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\Client\Controllers\CalendarController.cs" />
@@ -884,6 +884,7 @@
     <Folder Include="Areas\Client\Models\" />
     <Folder Include="Areas\Client\Views\Default\" />
     <Folder Include="Areas\Client\Views\Shared\" />
+    <Folder Include="Areas\Provider\Models\" />
     <Folder Include="Areas\Provider\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

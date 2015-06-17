@@ -1,10 +1,4 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en");
-/*
- *
- *   INSPINIA - Responsive Admin Theme
- *   version 2.0
- *
-*/
 h1,
 h2,
 h3,
@@ -3073,17 +3067,28 @@ ol.unstyled {
 }
 /* FOOTER */
 .footer {
-  background: #333333;
+
+  background: none repeat scroll 0 0  #333333;
+  border-top: 1px solid #e7eaec;
+    color: #A2A2A2;
+  color: rgba(255, 255, 255, 0.6);
+  /*bottom: 0;*/
+  left: 0;
+  padding: 10px 20px;
+  position: absolute;
+  right: 0;
+
+  /*background: #333333;
   color: #A2A2A2;
   color: rgba(255, 255, 255, 0.6);
   /* background: none repeat scroll 0 0 ; */
-  border-top: 1px solid #e7eaec;
+  /*border-top: 1px solid #e7eaec;
   left: 0;
   padding: 10px 20px;
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: -2rem;
+  padding: -2rem;*/
 }
 .footer.fixed_full {
   position: fixed;
@@ -6714,4 +6719,28 @@ body.skin-3 {
 
 .reviews-text .active {
   text-decoration: underline;
+}
+
+/*
+ * Calendar Events
+ */
+.cal-unconfirmed-booking {
+    border: 1px solid #ffba0e; 
+    background-color: #ffba0e; 
+    color: #675731;
+    font-weight: normal;
+}
+
+.cal-confirmed-booking {
+    border: 1px solid #1ab394; 
+    background-color: #1ab394; 
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.cal-other-event {
+    border: 1px solid #808080; 
+    background-color: #808080; 
+    color: #ffffff;
+    font-weight: normal;
 }
